@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.root{
+    --pink: #F4ACB7;
+    --win: #9D8189;
+
+}
+
+body{
+    font-family: 'Pixelify Sans', cursive;
+    color: black;
+}
+
+h1{
+    font-size: 56px;
+    text-transform: uppercase;
+    color: #9a8c98;
+}
+
+.container{
+    background-color: #D8E2DC;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    height: 100vh;
+    flex-direction: column; /** determines the direction in which items are laid out within a flex container. It's like telling items which way to line up. For column Items are arranged vertically from top to bottom.**/
+}
+#board{
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap; /**items will got into the next lines if there is not enough space, creates multiple rows**/
+    margin-top: 40px;
+}
+
+.box{
+    height: 150px;
+    width: 150px;
+    font-size: 120px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+.box:nth-child(3n){ /**takes out the the border on the rightmost boxes, for each 3rd box removes the border right, starts counting horizontally**/
+    border-right: none;
+}
+.box:nth-child(6) ~ .box{ /**count 6 divs/boxes and then starting from 7, removing the border bottoms**/
+    border-bottom: none;
+}
+
+button{
+    padding: 10px 25px;
+    border-radius: 10px;
+    background-color: pink;
+    border-color: pink;
+    font-size: 16px;
+    transition: 300ms;
+    font-weight: bold;
+}
+
+button:hover{
+    transform: translate3d(-4px);
+    transform: translateY(-2px);
+}
